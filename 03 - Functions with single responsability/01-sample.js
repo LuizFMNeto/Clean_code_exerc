@@ -1,27 +1,9 @@
-async function buscarEDetalharNave() {
-    try {
-        const resposta = await fetch('https://swapi.dev/api/starships/9/');
-        const nave = await resposta.json();
+async function buscarPlaneta() {
+    const resposta = await fetch("https://swapi.dev/api/planets/1/");
+    const planeta = await resposta.json();
+    console.log(planeta.name);
 
-        const detalhesNave = `
-        Nome: ${nave.name}
-        Modelo: ${nave.model}
-        Fabricante: ${nave.manufacturer}
-        `;
-
-        console.log("Detalhes da Nave:");
-        console.log(detalhesNave);
-
-        const tamanhoTripulacao = parseInt(nave.crew);
-        if (tamanhoTripulacao > 100) {
-            console.log('Esta é uma nave grande.');
-        } else {
-            console.log('Esta é uma nave pequena.');
-        }
-
-    } catch (erro) {
-        console.error('Erro ao buscar detalhes da nave:', erro);
-    }
+    exibirNomePlaneta(planeta.name);
 }
 
-buscarEDetalharNave();
+buscarPlaneta();
