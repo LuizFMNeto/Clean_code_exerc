@@ -6,5 +6,5 @@ function checkAdmin(usuario) {
     }
 }
 
-let usuario = { nome: "João", isAdmin: false };
+let usuario = { nome: "João", isAdmin: true };
 checkAdmin(usuario);
