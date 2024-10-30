@@ -1,8 +1,8 @@
-async function buscarPersonagem(id) {
+async function buscarPersonagemPorId(id) {
     const url = encodeURIComponent(`https://swapi.dev/api/people/${id}/%%%`);
     const resposta = await fetch(url);
     const personagem = await resposta.json();
-    console.log(personagem.name);
+    console.log(personagem);
 }
 
 const lukeId = 1;
